@@ -117,10 +117,7 @@ a {
 
 }
   .popup-button-text {
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
+    display:none;
 }
   
   .popup-close:focus {
@@ -166,11 +163,7 @@ a {
 }
 
  .popup-radio-button {
-  position: absolute;
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	width: 1px;
-
+  display: none;
 }
 
  .checkbox-group {
@@ -380,25 +373,26 @@ margin-top: 60px;
 
 .trend-content {
   display: flex;
-  justify-content: space-between;
   width: 100%;
-  padding-top: 45px;
+  justify-content: space-between;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 28px;
 }
 
 .trends {
-position: relative;
-min-height: 300px;
-width: calc(25% - 2px);
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-border: 1px solid black;
-text-align: left;
-display: flex;
-align-items: flex-end;
-justify-content: center;
-z-index: 1;
-
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 24.25%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: white;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
 }
 
 .trends::after {
@@ -412,19 +406,26 @@ z-index: 1;
   opacity: 0.6;
 }
 
-.trend-1 {
-  background-image: url('../images/trend1.jpg');
+.trends-picture {
+  width: 100%
 }
 
-.trend-2 {
-  background-image: url('../images/trend2.jpg');
+ .trend-img {
+  
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
 }
 
-.trend-3 {
-  background-image: url('../images/trend3.jpg');
+.trend-img-garden {
+ margin-right: 1%;
 }
-.trend-4 {
-  background-image: url('../images/trend4.jpg');
+.trend-img-cheese {
+  margin-right: 1%;
+}
+.trend-img-hike {
+  margin-right: 1%;
 }
 
 .trend-info {
@@ -435,6 +436,7 @@ right: 20px;
 z-index: 2;
 border: 3px solid #b59f5b;
 padding: 5%;
+
 }
 
 .tag-in-card {
@@ -459,10 +461,6 @@ padding: 5%;
 
 .tag:hover {
   color: #0f0d0e;
-}
-
-.tag:nth-last-child(n+2) {
-margin-right: 20px;
 }
 
 
@@ -491,7 +489,7 @@ margin-right: 20px;
 }
 
 .content {
-  width: calc(100% - 280px);
+  
   max-width: 765px;
   margin-right: 145px;
   
@@ -519,6 +517,7 @@ margin-right: 20px;
 .tag-list:not(:last-child) {
   margin-right: 20px;
 }
+
 
 .tag-link {
   text-decoration: none;
@@ -679,6 +678,7 @@ margin-right: 20px;
   text-decoration: none;
   color: #000000;
   font-size: 14px;
+
   line-height: 18px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
@@ -701,15 +701,12 @@ margin-right: 20px;
 }
 
 .search-hidden {
-  width: 1px;
-  height: 1px; 
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
+  display:none;
  
 }
 
 .posts-field {
-  width: calc(100% - 48px);
+  width: 222px;
   height: 48px;
   background-color: #f3f7f5;
   font-size: 13px;
@@ -724,7 +721,7 @@ margin-right: 20px;
 
 .posts-field:focus {
   outline: none;
-  width: calc(100%-48px);
+  width: 222px;
   background-color: #f4f7f6;
   border: 1px solid #b59f5b;
   
@@ -757,10 +754,7 @@ margin-right: 20px;
 }
 
 .subscription-hidden {
-  width: 1px;
-  height: 1px; 
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
+  display:none;
   
 }
 
@@ -904,6 +898,7 @@ margin-right: 20px;
   margin-top: 13px;
   margin-right: auto; 
   margin-left: auto;
+  margin-bottom: 13px;
 
 }
 
@@ -1070,10 +1065,7 @@ margin-right: 20px;
 }
 
 .social-link-text {
-  width: 1px;
-  height: 1px; 
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
+  display:none;
   
 }
 
@@ -1167,11 +1159,7 @@ margin-right: 20px;
   }
 
   .menu-button-burger {
-    width: 1px;
-    height: 1px;
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute;
-  }
+    display:none;
 }
    
 /*===TABLET AND MOBILE===*/
@@ -1184,6 +1172,9 @@ margin-right: 20px;
   }
   .trend-content {
     flex-wrap: wrap;
+  }
+  .trend-img {
+    width: 100%;
   }
 
   
@@ -1235,12 +1226,21 @@ margin-right: 20px;
     line-height: 55px;
   }
   .trends {
-    width: calc(50% - 2px);
+    width: 49%;
   }
-  .trend-1,
-  .trend-2 {
+  .trend-garden,
+  .trend-cheese {
     margin-bottom: 2px;
   }
+
+  .trend-garden {
+    margin-right: 1%;
+   }
+   
+   .trend-hike {
+     margin-right: 1%;
+   }
+
   .tag {
     font-size: 14px;
   }
@@ -1258,8 +1258,12 @@ margin-right: 20px;
     margin-bottom: 10px;
   }
   .sidebar {
-    width: 272px;
-    max-width: calc(100%-30px);
+    width: 271px;
+
+  }
+  .shop-items {
+    display: flex;
+    flex-direction: row;
   }
 
   .shop-item {
@@ -1278,7 +1282,7 @@ margin-right: 20px;
     font-size: 17px;
   }
   .footer {
-    width: calc(100%-30px);
+    width: 100%;
     margin-left: 35px;
     margin-right: 35px;
   }
@@ -1304,7 +1308,6 @@ input [type="search"]{
 }
 .popup-form {
   box-sizing: border-box;
-  width: calc(100%-30px);
   max-width: 360px;
   padding: 10px 20px 30px 20px;
 }
@@ -1339,6 +1342,7 @@ margin-bottom: 25px;
 
 .trends {
   width: 100%;
+  margin-bottom: 4px;
 }
 
 .trend-info-title {
@@ -1371,18 +1375,25 @@ margin-bottom: 25px;
   margin-bottom: 25px;
 }
 .shop-items {
+  display: flex;
+  margin-left: 20px;
+  
+  flex-wrap: wrap;
+ width: 100%;
  margin-top: 0;
+
 }
 .shop-item {
-  
-  width: calc(100% - 30px);
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   margin-bottom: 55px;
+}
+.shop-item-info {
+  max-width: 330px;
+  max-height: 220px;
 }
 
 .footer {
-  width: calc(100% - 30px);
+  width: 531px;
 }
 }
  
